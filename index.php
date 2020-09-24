@@ -2,6 +2,6 @@ Hello World
 
 <?php 
 
-  phpinfo();
+  echo("Douuuuuum yourself");
 
 ?>
