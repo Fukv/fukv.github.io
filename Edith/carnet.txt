@@ -1,0 +1,116 @@
+Préfixes
+
+Functions
+
+add		: pour ajouter
+set 	: pour des changement
+go		: pour les actions (ex: goOpenWin)
+handle	: pour les prises en charge (d'evenement par ex)
+
+Variables
+
+is		: indique un etat (ex: isInit indique si l'init s'est passé correctement)
+dom 	: pour les elements htmls
+
+
+
+
+
+todo 14/08: tester keys["in"]
+			créer goExec et linker handleKeys 
+
+
+
+
+User: 
+	0: Admin
+	1: anybody
+
+Files: 
+	- Permissions:
+		- en fonction des Users
+		- chaque file a des permissions d'accès (read ou write, execute comme unix est inutile)
+			rwrw	r-r-
+			1111	1010
+			3 3		2 2 
+	- Possibilité de :
+		- GET
+		- WRITE
+		- CREATE
+		- DELETE
+
+
+feed : affiche dans le menu ce qu'on lui donne au format 
+	[
+		{"name": "about", "type": "cmd", "cmd": {'command': {"opcode": "openWin", "arg": {"win": "about"}}}},
+		{"name": "fold", "type": "fold", "content": [
+			{"name": "changelog", "type": "cmd", "cmd": {'command': {"opcode": "openWin", "arg": {"win": "changelog"}}}}
+		]}
+	] 
+
+get : va chercher dans menuArray les lignes a afficher, selon le path, et selon un str pour la recherche
+
+
+
+Todo: 
+dans le menu, créer une meilleure recherche (casesensitive)
+
+Params : 
+
+Wrap, défini si l'editor doit faire des retours a la ligne pour les longues lignes
+
+
+
+
+
+Init
+
+step (un seul truc)
+
+milestone (un groupement de truc)
+
+
+
+
+
+chaque truc déclare un event qui fait monter d'un step
+
+une fois que tout les step d'une milestone sont fini
+on passe au step de la milestone suivente
+
+
+
+3 15
+
+Codes erreurs Inits
+
+0x001 : aucune etape sous ce nom
+0x002 : la milestone demandé n'existe pas
+
+
+
+Menu Contextuel
+
+Editor 
+	Select all 
+	Select line
+	---
+	Goto end of file
+	Goto begin of file
+
+Console 
+	Clear console
+	Hide console
+	
+
+"contextMenu": {
+
+	"editor": [
+
+		[
+			{"name": "Select All", "command": {"opcode": "openWin", "arg": {"win": "about"}}}
+		]
+
+	]
+
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>Edith</title>
+	<meta name="description" content="Edith est simplement le meilleur editeur du monde" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="asset/css/style.css">
+	<link rel="icon" href="asset/img/favicon.ico" type="image/x-icon">
+	<script defer src="asset/js/edithCore.js"></script>
+
+	<!-- <script async defer src="asset/js/lib/jquery.js" onload="Edith.init.passStep('lib-jquery')"></script>
+	<script async defer src="asset/js/lib/behave.js" onload="Edith.init.passStep('lib-behave')"></script> -->
+	<!-- <script async src="asset/js/edithScript.js"></script> -->
+</head>
+<body onload="Edith.init.launch();">
+	
+	<div id="loaderPan">
+		
+		<h1>Edith</h1>
+
+		<div id="loaderPan-outerBar">
+			<div id="loaderPan-innerBar"></div>
+		</div>
+
+		<span id="loaderPan-info"></span>
+		<div id="loaderPan-steps"></div>
+
+	</div>
+
+	<!-- <div id="fatalPan">
+		
+		<h1 id="fatalPan-title">Connexion Perdue</h1>
+		<p id="fatalPan-expl">Essayez de vous reconneter</p>
+		
+		<button id="fatalPan-button">Réessayer</button>
+
+	</div> -->
+
+	<div id="pannelsContainer">
+
+		<div class="apannel" id="editorContainer">
+			<textarea autofocus spellcheck="false" id="editor" aria-label="textarea principal de l'editeur"></textarea>
+		</div>
+		<div class="apannel" id="console"></div>
+		<div class="apannel" id="statutbar">
+			<div id="statutbar-openMenu" onclick="Edith.openWin('menu', {'resetPath': true})"></div>
+			<div id="statutbar-caractInfo"></div>
+			<div id="statutbar-statut"></div>
+		</div>
+	</div>
+
+	<div id="windowContainer">
+		<div class="windows" id="aboutWin">
+			<h1> ___    _ _ _   _    <br>
+				| __|__| (_) |_| |_  <br> 
+				| _|/ _` | |  _| ' \ <br> 
+				|___\__,_|_|\__|_||_|<br>
+			</h1>
+			<br>
+			<p class="subtitle">Édith est l'éditeur de texte simple, et .. archaïque</p>
+			<p>Programmé pensé et designé par INSYCO_NESH</p>
+
+			<p>Version 1.0, Moriarty</p>
+
+			<p>Merci aux quatres librairies :</p>
+			<ul>
+				<li><b>Behave.js</b>, pour la gestion du textarea</li>
+				<li><b>jQuery</b>, pour la gestion du dom</li>
+				<li><b>JSON5</b>, pour parser du JSON5 (fichier de configuration)</li>
+				<li><b>Marked</b>, pour transformer la documentation, du markdown a l'html</li>
+			</ul>
+
+		</div>
+
+		<div class="windows" id="changelogWin">
+			<h1>Changelog</h1>
+			<p class="subtitle">Édith est l'éditeur de texte simple, et .. archaïque</p>
+			<br />
+			<h2>Version 1.0, Moriarty</h2>
+			<p>Première version, la beta</p>
+			<p></p>
+		</div>
+
+		<div class="windows" id="menuWin">
+			<input type="text" id="menuWinInput">
+			<div id="menuLinesArray">
+			</div>
+		</div>
+
+		<div class="windows" id="settingsWin">
+			<textarea spellcheck="false" id="settingsEditor"></textarea>
+		</div>
+	</div>
+
+</body>
+</html>

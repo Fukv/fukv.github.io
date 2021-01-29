@@ -1,0 +1,84 @@
+@font-face {
+	font-family: 'Ubuntu Mono';
+	font-weight: 400;
+	src: url("../font/UbuntuMono-Regular.ttf");
+	font-display: swap;
+}
+
+* {
+	box-sizing: border-box;
+	font-family: 'Ubuntu Mono', monospace;
+	scrollbar-color: white black;
+	scrollbar-width: thin;
+}
+
+body {
+	background: black;
+	color: white;
+}
+
+
+
+main {
+	width: 75%;
+	margin: auto;
+	margin-top: 100px; 
+}
+
+
+h1 {
+	font-size: 2.5em;
+	margin-bottom: 50px;
+}
+
+h2 {
+	margin-top: 50px;
+}
+
+a {
+	color: white;
+}
+
+a:hover {
+	background: white;
+	color: black;
+}
+
+blockquote {
+	margin-left: 20px;
+}
+
+code {
+	background: white;
+	color: black;
+	width: max-content;
+	margin: 3px 0;
+	padding: 0 2px;
+}
+
+pre code {
+	margin-left: 20px;
+	background: black;
+	color: white;
+}
+
+blockquote p, pre code {
+	padding: 5px 20px;
+	display: block;
+	border-left: 3px solid white;
+}
+
+hr {
+	border: none;
+	height: 2px;
+	width: 50%;
+	background: white;
+	margin: 40px auto;
+}
+
+img {
+	width: 75%;
+	margin: 50px auto;
+	display: block;
+	border: white 1px solid;
+}

@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro&display=swap');
+
+* {
+	font-family: 'Roboto', monospace;
+	overflow: hidden;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background: black;
+}
+
+#theLKA {
+	resize: none;
+	border: none;
+	padding: 0;
+	margin: 0;
+	background: black;
+	width: 70%; 
+	height: 70%; 
+	color: white;
+	font-size: 14px;
+}
+
+#note {
+	position: absolute;
+	top: 0;
+	right: 0;
+	min-height: 70%;
+	max-height: 70%;
+	width: 30%;
+	outline: 1px white solid;
+	color: white;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	font-size: 14px;
+}
+
+#noteTextarea {
+	background: black;
+	border: none;
+	color: white;
+	height: 300px;
+	width: 100%;
+	resize: none;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	font-size: 14px;
+}
+
+hr {
+	border: white 1px solid;
+}
+
+#cheat {
+	max-width: 100%;
+	padding: 10px;
+	overflow: hidden;
+}
+
+#LKAcheat {
+	max-width: 100%;
+	padding: 10px;
+	overflow: hidden;
+}
+
+.monoFont {
+	font-family: 'Source Code Pro', monospace;
+}
+
+legend {
+	font-size: 12px;
+	color: #d9d9d9;
+	
+}
+
+h1 {
+	margin: 0px;
+}
+
+h2 {
+	margin-top: 20px;
+}
+
+a {
+	color: white;
+}
+
+ul {
+	
+	padding-left: 15px;
+}
+
+#output {
+	bottom: 0;
+	height: 30%;
+	width: 100%;
+	outline: 1px white solid;
+	color: white;
+}
+
+#daWindow {
+	position: absolute;
+	height: 75%;
+	width: 75%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+
+	background: black;
+	color: white;
+	outline: white solid 1px;
+	padding: 15px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	
+	z-index: 999;
+
+	display: none;
+}
+
+rep {
+	display: none;
+}
+
+#inputGotoLine {
+	background: black;
+	border: none;
+	outline: 1px solid white;
+	color: white;
+	top: 50%;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: 0 auto;
+
+	height: 30px;
+}

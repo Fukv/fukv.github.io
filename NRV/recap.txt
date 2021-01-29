@@ -1,0 +1,85 @@
+Types cont :
+
+0x : opcode (2)
+1x : direct (4)
+2x : ref 	(4)
+9x : misc 	(4)
+
+Opcodes : 
+
+	Memoire :
+		STOR	: 00	ope + ope	
+		MOV		: 01	ope + ope
+		COP 	: 02	ope + ope
+	Maths : 
+		ADDT 	: 10	ope + ope
+		SOUS	: 11	ope + ope
+		MULT	: 12	ope + ope
+		DIVI	: 13	ope + ope
+	Comparaison :
+		EQU		: 20	ope + ope
+		DIFF	: 21	ope + ope
+		SUP		: 22	ope + ope
+		INF		: 23	ope + ope
+		SUPE	: 24 	ope + ope
+		INFE 	: 25 	ope + ope
+	Bool : 
+		AND 	: 30	ope + ope
+		OR		: 31	ope + ope
+		XOR		: 32	ope + ope
+		NOT	 	: 33	ope
+	Tests :
+		IF 		: 40	ope + ope
+		IFN 	: 41	ope + ope
+		GOTOR 	: 42 	ope
+		GOTOA 	: 43 	ope 
+	Misc :
+		NOPE 	: 50	
+		PRINT	: 51 	ope
+
+Misc : 
+	
+	NOPE 	: 00
+
+Exemple : 0x00 2x5042 5x89 = stocke 5042 a l'adresse 89 de la memoire 
+0x00 2x5000 5x05 0x10 3x05 1x50 = stocke 5000 a l'adresse 5 de la memoire, puis fait une addition (et place le résultat dans 3x00) entre 5000 et 50
+
+0x51 1x0072 9x0000 H
+0x51 1x0101 9x0000 e
+0x51 1x0108 9x0000 l
+0x51 1x0108 9x0000 l
+0x51 1x0111 9x0000 o
+0x51 1x0032 9x0000 " "
+0x51 1x0087 9x0000 W
+0x51 1x0111 9x0000 o
+0x51 1x0114 9x0000 r
+0x51 1x0108 9x0000 l
+0x51 1x0100 9x0000 d
+0x51 1x0033 9x0000 !
+
+
+
+Memoire :
+
+	0-9 :
+		0 	: CodePointer
+		1 	: Résultat d'opération arithmétique +-*/
+		2 	: Résultat de comparaison 
+		3	: Résultat de bool
+		
+	10-∞ :
+		wyfwmo
+
+Erreurs :
+
+	1xx : inattendu 
+		100 : n'es pas un opcode
+		101 : n'est pas le bon unit pour l'opcode
+		102 : longueure d'opcode inattendu, normalement 3
+		103 : longueur d'arg inattendu
+		104 : n'est pas un nombre
+		105 : les seconds args des instructions 1ope doivent etre 9x0000, l'arg visé ne l'est pas
+		106 : longueur d'instruction inattendu (normalement 3 unit)
+
+	2xx : non reconnnu
+		200 : n'est pas un opcode reconnu

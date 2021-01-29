@@ -1,0 +1,24 @@
+Mémoire (stor, del, stack, pop, destack) ($)
+Arithmétique (add, sous, div, mult)
+i/o (print, prompt)
+sauts code pointer (jmp) (jmpAft () )
+conditions (jmpif)
+variables spéciales ($_) ($_cp, une variable spéciale contenant le numéro de ligne sur le quel on est)
+
+
+Stor, NRV, Grallifer, M! et JASAA
+
+Pas Jasaa, mais 
+TEPO (TEPO Est Prononcé Oui)
+KEPO (KEPO Est ..)
+
+Definitif KEPO
+
+Stor, NRV, Grallifer, M! (M33) et Kepo
+
+
+Stor dude $_cp # nouvelle fonction
+	prompt "Dude ?" &rep
+	print "This dude said : $rep"
+ret
+

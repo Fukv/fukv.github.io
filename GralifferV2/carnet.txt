@@ -1,0 +1,26 @@
+ a b c d e f g h i j ... A B C ... 1 2 3 .. - +
+a
+b
+c
+g
+h
+i
+j
+k
+l
+m
+...
+
+
+
+arg type
+
+XXX direct 
+.XX value to adress
+/XX pointer
+*XX pointer to point
+
+
+
+
+rit|||dnZ|.bb|\|0

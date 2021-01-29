@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+	<head>
+  		<meta charset="UTF-8">
+  		<title>NRVv1</title>
+  		<link rel="stylesheet" type="text/css" href="mainStyle.css">  		
+	</head>
+
+	<body>
+
+		<!-- <div id="lineCounter"></div>	 -->	
+		<textarea class="monoFont" spellcheck="false" autofocus id="theLKA"></textarea>
+
+		<div id="daWindow">
+		</div>
+
+		<div id="note">
+			<textarea id="noteTextarea" placeholder="Notes" class="monoFont" spellcheck="false"></textarea>
+			<hr>
+			<div id="cheat">
+				<h1>NRV Cheat Sheet</h1>
+				<legend>Vous trouverez ici des Tips utiles en cas de doute (bien qu'il n'y ai pas de quoi) si vous avez besoin de plus d'information, vous trouverez <a target="_blank" href="https://fr.wikipedia.org/wiki/Utilisatrice:Fukovv/NRV">ici</a></legend>
+				<h2>Sommaire</h2>
+				<ul id="cheatSommaire">
+					<li class="monoFont">- <a href="#cheatTermes">Termes</a></li>
+					<li class="monoFont">- <a href="#cheatUnit">Units</a></li>
+					<li class="monoFont">- <a href="#cheatOpcode">Opcodes</a></li>
+					<li class="monoFont">- <a href="#cheatMemoire">Utilisation Mémoire</a></li>
+					<li class="monoFont">- <a href="#cheatExemple">Exemples</a></li>
+				</ul>  
+				
+				<h2 id="cheatTermes">Termes</h2>
+					<ul>
+						<li>- Unit : chaque mot délimités par des espaces, sous la forme 1x0042</li>
+						<li>- Opcode : type d'unit, détermine l'opération a effectuer</li>
+						<li>- Befx : la partie de l'unit avant x (Before x)</li>
+						<li>- Aftx : la partie après x (After x)</li>
+						<li>- LKA : l'interface graphique de l’interpréteur</li>
+					</ul>  
+
+				<h2 id="cheatUnit">Units</h2>
+					<ul>
+						<li>- 0x : Opcode (2 Aftx)</li>
+						<li>- 1x : Direct (4)</li>
+						<li>- 2x : Reférence (4)</li>
+						<li>- 9x : Misc (4)</li>
+					</ul>  
+
+				<h2 id="cheatOpcode">Opcodes</h2>
+					<ul>
+						<li>Mémoire
+							<ul>
+								<li class="monoFont">x00 : STOR  (2ope)</li>
+								<li class="monoFont">x01 : MOV   (2ope)</li>
+								<li class="monoFont">x00 : COP   (2ope)</li>
+							</ul>
+						</li>
+						<li>Arithmétique
+							<ul>
+								<li class="monoFont">x10 : ADDT  (2ope)</li>
+								<li class="monoFont">x11 : SOUS  (2ope)</li>
+								<li class="monoFont">x12 : MULT  (2ope)</li>
+								<li class="monoFont">x13 : DIVI  (2ope)</li>
+							</ul>
+						</li>
+						<li>Comparaison
+							<ul>
+								<li class="monoFont">x20 : EQU   (2ope)</li>
+								<li class="monoFont">x21 : DIFF  (2ope)</li>
+								<li class="monoFont">x22 : SUP   (2ope)</li>
+								<li class="monoFont">x23 : INF   (2ope)</li>
+								<li class="monoFont">x23 : SUPE  (2ope)</li>
+								<li class="monoFont">x23 : INFE  (2ope)</li>
+							</ul>
+						</li>
+						<li>Bool
+							<ul>
+								<li class="monoFont">x30 : AND   (2ope)</li>
+								<li class="monoFont">x31 : OR    (2ope)</li>
+								<li class="monoFont">x32 : XOR   (2ope)</li>
+								<li class="monoFont">x33 : NOT   (1ope)</li>
+							</ul>
+						</li>
+						<li>Branchement
+							<ul>
+								<li class="monoFont">x40 : IF    (2ope)</li>
+								<li class="monoFont">x41 : IFN   (2ope)</li>
+								<li class="monoFont">x42 : GOTOR (1ope)</li>
+								<li class="monoFont">x43 : GOTOG (1ope)</li>
+							</ul>
+						</li>
+						<li>Misc
+							<ul>
+								<li class="monoFont">x50 : NOPE  (2ope)</li>
+								<li class="monoFont">x51 : PRINT (2ope)</li>
+							</ul>
+						</li>
+					</ul>
+
+				<h2 id="cheatMemoire">Utilisation Mémoire</h2>
+					<ul>
+						<li>- 0 : Code Pointer</li>
+						<li>- 1 : Résulat d'opération Arithmétique</li>
+						<li>- 2 : Résultat de comparaison</li>
+						<li>- 3 : Résultat d'opération de logique Booléenne</li>
+					</ul>  
+
+				<h2 id="cheatExemple">Exemples</h2>
+
+					<ul>
+						Hello World! :
+						<li class="monoFont">
+							0x51 1x0072 9x0000<br />
+							0x51 1x0101 9x0000<br />
+							0x51 1x0108 9x0000<br />
+							0x51 1x0108 9x0000<br />
+							0x51 1x0111 9x0000<br />
+							0x51 1x0032 9x0000<br />
+							0x51 1x0087 9x0000<br />
+							0x51 1x0111 9x0000<br />
+							0x51 1x0114 9x0000<br />
+							0x51 1x0108 9x0000<br />
+							0x51 1x0100 9x0000<br />
+							0x51 1x0033 9x0000
+						</li>
+					</ul>
+			</div>
+			<hr>
+			<div id="LKAcheat">
+				<h1>LKA Shortcuts</h1>
+				<ul>
+					<li>F1 : Commente la Sélection</li>
+					<li>F5 : Recharge la page</li>
+					<li>F9 : Run the code</li>
+					<li>Alt+C : Change Log</li>
+					<li>Alt+A : About</li>
+
+				</ul>
+			</div>
+		</div>
+		<div id="output"></div>
+	
+		<span id="changelogRep" class="rep">
+			<h1>ChangeLog</h1>
+			<legend>L’interpréteur NRV est actuellement a sa première version (NRVv1 : Some Pie)</legend>
+			<h2>NRVv1 - Some Pie - 15/02/2020 22:21</h2>
+			<p>Première version de l'interpreteur</p>
+			<p>23 Instructions, 24,251 octets</p>
+		</span>
+		
+		<span id="caspRep" class="rep">0x51 1x0105 9x0000 0x51 1x0039 9x0000 0x51 1x0109 9x0000 0x51 1x0032 9x0000 0x51 1x0116 9x0000 0x51 1x0104 9x0000 0x51 1x0101 9x0000 0x51 1x0032 9x0000 0x51 1x0102 9x0000 0x51 1x0117 9x0000 0x51 1x0099 9x0000 0x51 1x0107 9x0000 0x51 1x0105 9x0000 0x51 1x0110 9x0000 0x51 1x0039 9x0000 0x51 1x0032 9x0000 0x51 1x0112 9x0000 0x51 1x0105 9x0000 0x51 1x0101 9x0000 #Si_vous_avez_écrasé_votre_programme,_une_variable_nommé_codeBackup_peut_vous_le_rendre</span>
+		
+		<span id="aboutRep" class="rep">
+			<h1 style="text-align: center">About</h1>
+			<p style="text-align: center;">NRVInterp est l'interpreteur officiel du langage <a target="_blank" href="https://fr.wikipedia.org/wiki/Utilisatrice:Fukovv/NRV">NRV</a></p>
+		</span>
+
+		<span id="errorRep" class="rep">
+			
+			<h1 style="text-align: center"></h1>
+			<p style="text-align: center"></p>
+		</span>
+
+		<span id="gotoLineRep" class="rep">
+			<h1 style="text-align: center">Go To :</h1>
+			<input id="inputGotoLine" onkeydown="if (event.key == 'Enter' && !isNaN(Number(this.value))) {gotoLine(this.value); event.preventDefault()}" type="text" name="line">
+		</span>
+
+		<span id="whereLineRep" class="rep">
+			<h1>Vous êtes actuellement ligne <strong id="whereLineAsr"></strong></h1>
+		</span>
+
+	</body>
+
+	<script type="text/javascript" src="nrvInterp.js"></script>
+	<script type="text/javascript" src="LKA.js"></script>

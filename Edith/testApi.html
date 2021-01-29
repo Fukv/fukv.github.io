@@ -1,0 +1,75 @@
+<meta charset="UTF-8">
+<script type="text/javascript">
+	
+	function sendApi(requ, callback) {
+
+		function errorXhr(error, explain) { // une func locale pour s'occuper des erreurs XHR (et les renvoyer au niveau errorClient)
+			if (typeof(clientError) == "function") {
+				clientError(error)
+			} else {
+				if (explain) {
+					console.error("Erreur XHR (" + error + ") : " + explain)
+				} else {
+					console.error("Erreur XHR (" + error + ")")
+				}
+			}
+		}
+
+		// chaque requête envoyé est mise dans xhrArray pour permettre d'avoir plusieurs
+		// requêtes en simultané
+
+		if (typeof xhrArray) {
+			xhrArray = new Array();
+		}
+
+		var xhrOffset = 0; // l'offset de l'xhr
+		while(typeof(xhrArray[xhrOffset]) != "undefined") {
+			xhrOffset++
+		}
+
+		xhrArray[xhrOffset] = new XMLHttpRequest()
+		xhrArray[xhrOffset].open("POST", "asset/api/api.php");
+
+		var form = new FormData();
+		if (typeof requ != "string") {
+			var requJson = JSON.stringify(requ)
+		} else {
+			requJson = requ;
+		}
+		
+		form.append("requ", requJson)
+
+		xhrArray[xhrOffset].onreadystatechange = function () { // function qui se déclenche au retour de demande
+			if(this.readyState === 4) { 
+				if (this.status === 200) { // si tout est ok
+					try { // on teste si la réponse est compatible JSON
+						jsonResponse = JSON.parse(this.response);
+					} catch (error) { // sinon cela veut dire que il s'est passé une erreur fatale pour l'API
+						jsonResponse = false;
+						errorXhr(102);
+					}
+
+					if (jsonResponse) {
+						if (callback) {
+							callback(this);
+						} else {
+							console.log(jsonResponse)
+						}
+					}
+				} else {
+					errorXhr(101, "réseau " + this.status)
+				}
+			}
+			delete xhrArray[xhrOffset];
+		};
+
+		xhrArray[xhrOffset].send(form)
+	}
+
+</script>
+
+<style type="text/css">
+	* {
+		background: black;
+	}
+</style>

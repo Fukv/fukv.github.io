@@ -1,0 +1,40 @@
+{
+
+	// Active le wrap ou non (retour a la ligne lorsque la ligne est trop longue)
+	"editor-wrap": false, 
+
+	"keyBind": [
+	
+		{"keys": "arrowup", "command": {"opcode": "handleMenu", "arg": {"action": "movePointer", "direction": "up"}}, "prevDefault": true, "context": [
+			{"type": "focus", "focused": "menu"}
+		]},
+		{"keys": "arrowdown", "command": {"opcode": "handleMenu", "arg": {"action": "movePointer", "direction": "down"}}, "prevDefault": true, "context": [
+			{"type": "focus", "focused": "menu"}
+		]},
+		{"keys": "enter", "command": {"opcode": "handleMenu", "arg": {"action": "execute"}}, "context": [
+			{"type": "focus", "focused": "menu"}
+		]},
+		{"keys": "alt+backspace", "command": {"opcode": "handleMenu", "arg": {"action": "changeDir", "direction": "backward"}}, "context": [
+			{"type": "focus", "focused": "menu"}
+
+		]},
+
+		// context less (base)
+		{"keys": "f1", "command": {"opcode": "openWin", "arg": {"win": "menu", "arg": {"resetPath": true}}}, "prevDefault": true},
+		{"keys": "alt+f1", "command": {"opcode": "openWin", "arg": {"win": "menu"}}, "prevDefault": true},
+		{"keys": "alt+a", "command": {"opcode": "openWin", "arg": {"win": "about"}}, "prevDefault": true},
+		{"keys": "escape", "command": {"opcode": "closeWin"}, "prevDefault": true},
+		{"keys": "f9", "command": {"opcode": "execCode"}, "prevDefault": true},
+		{"keys": "alt+s", "command": {"opcode": "openWin", "arg": {"win": "settings"}}, "prevDefault": true}
+	],
+
+	"menuArray": [
+		{"name": "Tools", "type": "fold", "content": [
+			{"name": "changelog22", "type": "cmd", "cmd": {"opcode": "openWin", "arg": {"win": "changelog"}}}
+		]},
+		{"name": "Fenêtres", "type": "fold", "content": [
+			{"name": "About", "type": "cmd", "cmd": {"opcode": "openWin", "arg": {"win": "about"}}},
+			{"name": "Changelog", "type": "cmd", "cmd":  {"opcode": "openWin", "arg": {"win": "changelog"}}}
+		]},
+	]
+}

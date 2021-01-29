@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>Edith - Documentation</title>
+	<meta name="description" content="Documentation d'Edith" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="../asset/css/styleDoc.css">
+	<link rel="icon" href="../asset/img/favicon.ico" type="image/x-icon">
+	<script defer src="../asset/js/lib/marked.js"></script>
+</head>
+<body>
+	
+	<main>
+
+	</main>
+
+</body>
+
+<script type="text/javascript">
+	
+	datadoc = new XMLHttpRequest();
+	datadoc.open("GET", "data.md");
+	datadoc.overrideMimeType("text/plain");
+	
+	datadoc.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			
+			document.getElementsByTagName("main")[0].innerHTML = marked(this.response);
+		}
+	};
+
+	datadoc.send();
+
+</script>

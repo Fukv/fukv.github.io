@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500;700&display=swap');
+
+body {
+	margin: 0;
+	padding: 0;
+	background: #2a2a2e;
+	font-family: "Roboto Mono";
+}
+
+table {
+	margin: 30px;
+}
+
+td {
+	font-size: 12px;
+	text-align: center;
+	background: #202020;
+	color: white;
+	height: 30px;
+	width: 30px;
+	min-width: 30px;
+	min-height: 30px;
+}
+
+tr::before {
+	content: attr(yoffset);
+	font-size: 12px;
+	color: white;
+	height: 30px;
+	display: flex;
+	align-items: center;
+	position: absolute;
+
+	transform: translate(-15px, 0);
+
+}
+
+tr:nth-child(1) td::before {
+
+	content: attr(xoffset);
+	font-size: 12px;
+	color: white;
+	width: 30px;
+	display: flex;
+	justify-content: center;
+	position: absolute;
+
+	top: 50px;
+
+	transform: translate(0, -40px);
+}
+
+td.active {
+	background: white;
+	color: black;
+}
+
+td.access {
+	background: black;
+	color: white;
+}
+
+body.editing td.active::after {
+	content: " ";
+}
+
+body.editing td.active.cursor::after {
+	content: " ";
+	text-decoration: underline;
+}
+
+#divby0 {
+	position: absolute;
+	transform: rotate(0deg);
+	height: 200px;
+	top: 50px;
+	left: -200px;
+	animation-name: divbyZ;
+	animation-duration: 2s;
+}
+
+@keyframes divbyZ {
+	from {
+		transform: rotate(30deg);
+		display: block !important;;
+		left: -200px;
+	}
+	50% {
+		transform: rotate(60deg);
+		display: block !important;
+		left: -90px;: 
+	}
+	to {
+		transform: rotate(30deg);
+		display: block !important;
+		left: -200px;
+	}
+}
