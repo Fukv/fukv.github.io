@@ -24,6 +24,9 @@ function load() {
 
 	setSizeCanvas()
 	window.addEventListener("resize", setSizeCanvas)
+	elCanvas.addEventListener("mousemove", function (event) {
+		console.log(event.clientX, event.clientY)
+	})
 
 	tick = 0
 

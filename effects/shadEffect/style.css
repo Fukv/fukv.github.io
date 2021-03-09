@@ -1,0 +1,23 @@
+body {
+	margin: 0;
+	padding: 0;
+	background: black;
+}
+
+.shadEffect-container {
+	position: absolute;
+	display: flex;
+	top:0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+}
+
+.shadEffect-text {
+	margin: auto;
+	color: black;
+	text-transform:uppercase;
+	font-size: 15em;
+	font-family: 'Montserrat', sans-serif;
+	transform: rotate3d(0.8, -1, 0.15, -30deg);
+}
